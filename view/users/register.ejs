@@ -1,0 +1,122 @@
+<!DOCTYPE html>    
+<html>    
+<head>    
+    <title>Register Form</title> 
+    <style>
+body{  
+    margin: 0;  
+    padding: 0;  
+    background-color:#C0C0C0;  
+    font-family: 'Arial';  
+}
+h3{
+    text-align: center;  
+    color: #282828;  
+    padding: 10px;
+}
+label{  
+    color: #e0e0e0;  
+    font-size: 17px;
+    position: relative;
+    left: 10%;
+}  
+#a{  
+    float: right;  
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    position: relative;
+    right: 9.2%;
+}
+#Register{
+        width: 382px;  
+        margin: auto;
+        padding: 80px 80px;  
+        background: #282828;  
+        border-radius: 15px ;
+}
+#fname{
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 8px;  
+    position: relative;
+    left: 10%;
+}
+#lname{
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 8px;  
+    position: relative;
+    left: 10%;
+}
+#Uname{  
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 8px;  
+    position: relative;
+    left: 10%;
+}  
+#Pass{  
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 8px;    
+    position: relative;
+    left: 10%;
+} 
+#next{  
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 17px;  
+    padding-left: 7px;  
+    color: black;  
+    position: relative;
+    left: 11.5%;
+    background-color: #C0C0C0;
+}
+#next:hover{
+    color: #C0C0C0;
+    background: rgb(27, 27, 27);
+}
+#email{
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 8px;  
+    position: relative;
+    left: 10%;
+}
+
+    </style>
+</head>    
+<body>    
+    <h3>Register</h3> 
+    <div class="Register">    
+    <form id="Register" action="register" method="post">    
+        <label><b>Firstname</b></label>
+        <input type="text" name="fname" id="fname" placeholder="Firstname">    
+        <br><br>
+        <label><b>Username</b></label>    
+        <input type="text" name="uname" id="Uname" placeholder="Username">    
+        <br><br>
+        <label><b>Email</b></label><br>
+        <input type="email" name="email" id="email" placeholder="Email">    
+        <br><br>
+        <label><b>Password</b></label>
+        <input type="Password" name="pass" id="Pass" placeholder="Password">    
+        <br><br>  
+        <br> 
+        <input type="submit" name="next" id="next" value="Next">  
+    </form>     
+</div>    
+</body>    
+</html>

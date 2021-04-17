@@ -1,0 +1,45 @@
+<%- include('../layout/head.ejs'); %>
+
+<body>
+    <%- include('../layout/admin-header.ejs') %> 
+
+    <!--Admin Page Wrapper-->
+    <div class="admin-wrapper">
+
+        <!--Left sidebar-->
+        <%- include('../layout/left-sidebar.ejs') %> 
+        <!--Left sidebar-->
+
+        <!--Admin content-->
+    <div class="admin-content">
+
+        <div class="content">
+            <% for(var i=0; i< users.length; i++) { %>
+            <h2 class="page-title"> Edit <%= users[i].username %>'s account </h2>
+            <form action="/edit/<%= users[i].id %>" method="post">
+                    <label>Firstname</label>
+                    <input type="text" name="firstname" value="<%= users[i].firstname %>" class="text-input">
+                    <br><br>
+                    <label>Lastname</label>
+                    <input type="text" name="lastname" value="<%= users[i].lastname %>" class="text-input">
+                    <br><br>
+                <label>Username</label>
+                <input type="text" name="username" value="<%= users[i].username %>" class="text-input">
+                <br><br>
+                <label>Email</label>
+                <input type="email" name="email" value="<%= users[i].email %>" class="text-input">
+                <br><br>
+                <label>Password</label>
+                <input type="text" name="password" value="<%= users[i].password %>" class="text-input">
+                <br><br>
+            <input type="submit" class="btn btn-big"></input>
+            </form>
+            <% } %>
+        </div>
+
+    </div>
+        <!--Admin content-->
+    </div>
+
+</body>
+</html> 

@@ -1,0 +1,55 @@
+<%- include('../layout/head.ejs') %> 
+
+<body>
+    <%- include('../layout/admin-header.ejs'); %>
+
+    <!--Admin Page Wrapper-->
+    <div class="admin-wrapper">
+
+        <!--Left sidebar-->
+        <%- include('../layout/left-sidebar.ejs') %> 
+        <!--Left sidebar-->
+
+        <!--Admin content-->
+    <div class="admin-content">
+        <div class="button-group">
+            <a href="/addPost" class="btn btn-big">Add Post</a>
+            <a href="/managePost" class="btn btn-big">Manage Post</a>
+        </div>
+
+        <div class="content">
+
+            <h2 class="page-title">Manage Post</h2>
+            <% for(var i=0; i< contents.length; i++) { %>
+            <form action="/editPost/<%= contents[i].id %>" method="post" enctype="multipart/form-data">
+            <div>
+                <label>Title</label>
+                <input type="text" name="title" id="title" class="text-input" value="<%= contents[i].title %>">
+            </div>
+            <div>
+                <label>Highlight</label>
+                <textarea name="highlight" id="highlight" class="text-input"><%= contents[i].highlight %></textarea>
+            </div>
+            <div>
+                <label>Body</label>
+                <textarea name="body" id="body"><%= contents[i].body %></textarea>
+            </div>
+            
+            <div>
+                <label>Image</label>
+                <img src="../images/<%= contents[i].image %>" id="post-image">
+                <input type="file" name="image" id="image" class="text-input">
+                <input type="hidden" name="image1"  value="<%= contents[i].image %>">
+            </div>
+            <button type="submit" class="btn btn-big">Add Post</button>
+            </form>
+            <% } %>
+
+        </div>
+
+    </div>
+        <!--Admin content-->
+    </div>
+
+</body>
+</html> 

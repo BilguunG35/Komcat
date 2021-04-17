@@ -1,0 +1,41 @@
+
+<%- include('layout/head.ejs'); %>
+
+<body>
+    <%- include('layout/header.ejs'); %>
+    <!--Page Wrapper-->
+
+    <div class="page-wrapper">
+
+        <!--Content-->
+        <div class="content clearfix">
+            <h1 class="post-title products">Products</h1>
+            <!--Main Content-->
+            <% for (var i=0; i< contents.length; i++) { %> 
+                <div class="main-content products">
+                    <div class="post">
+                        <img src="../images/<%= contents[i].image %> " alt="" class="post-image">
+                        <div class="post-preview">
+                            <h2><a href="/single/<%= contents[i].id %> "><%= contents[i].title %> </a></h2>
+                            &nbsp;
+                            <i class="far fa-calendar">April 20, 2018</i>
+                            <p><%= contents[i].body %></p>
+                        </div>
+                    </div>
+                </div>
+                <% } %>
+            </div>
+            <!--Content-->
+        </div>
+
+    <%- include('layout/footer.ejs'); %>
+
+    <!--Jquery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <!--Slick-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!--JS-->
+    <script src="../js/scripts.js"></script>
+</body>
+</html>

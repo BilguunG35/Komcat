@@ -1,0 +1,52 @@
+<%- include('../layout/head.ejs') %> 
+<body>
+    <%- include('../layout/admin-header.ejs') %> 
+    <!--Admin Page Wrapper-->
+    <div class="admin-wrapper">
+
+        <!--Left sidebar-->
+        <%- include('../layout/left-sidebar.ejs') %> 
+        <!--Left sidebar-->
+
+        <!--Admin content-->
+    <div class="admin-content">
+        <div class="button-group">
+            <a href="/addUser" class="btn btn-big">Add User</a>
+            <a href="/manageUser" class="btn btn-big">Manage User</a>
+        </div>
+
+        <div class="content">
+
+            <h2 class="page-title">Manage User</h2>
+
+            <table>
+                <thead>
+                    <th>№</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th colspan="2">Action</th>
+                </thead>
+                <tbody>
+                    <% for(var i=0; i< users.length; i++) { %>
+                    <tr>
+                        <td><%= users[i].id %></td>
+                        <td><%= users[i].username %></td>
+                        <td><%= users[i].email %></td>
+                        
+                        <td><form action="/edit/<%= users[i].id %>" method="GET">
+                            <input type="submit" value="Edit" class="btn btn-big Action"></form></td>
+                            <td><form action="/delete/<%= users[i].id %>" method="POST">
+                            <input type="submit" value="Delete" class="btn btn-big Action"></form></td>
+                    </tr>
+                    <% } %>
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+        <!--Admin content-->
+    </div>
+
+</body>
+</html> 

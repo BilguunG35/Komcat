@@ -1,0 +1,49 @@
+<%- include('../layout/head.ejs'); %>
+
+<body>
+    <%- include('../layout/admin-header.ejs') %> 
+
+    <!--Admin Page Wrapper-->
+    <div class="admin-wrapper">
+
+        <!--Left sidebar-->
+        <%- include('../layout/left-sidebar.ejs') %> 
+        <!--Left sidebar-->
+
+        <!--Admin content-->
+    <div class="admin-content">
+        <div class="button-group">
+            <a href="/addUser" class="btn btn-big">Add User</a>
+            <a href="/manageUser" class="btn btn-big">Manage User</a>
+        </div>
+
+        <div class="content">
+
+            <h2 class="page-title">Add User</h2>
+            <form action="/addUser" method="post">
+                    <label>Firstname</label>
+                    <input type="text" name="firstname" class="text-input">
+                    <br><br>
+                    <label>Lastname</label>
+                    <input type="text" name="lastname" class="text-input">
+                    <br><br>
+                <label>Username</label>
+                <input type="text" name="username" class="text-input">
+                <br><br>
+                <label>Email</label>
+                <input type="email" name="email" class="text-input">
+                <br><br>
+                <label>Password</label>
+                <input type="password" name="password" class="text-input">
+                <br><br>
+            <input type="submit" class="btn btn-big"></option>
+            </form>
+
+        </div>
+
+    </div>
+        <!--Admin content-->
+    </div>
+
+</body>
+</html> 

@@ -1,0 +1,52 @@
+<%- include('../layout/head.ejs') %> 
+
+</head>
+<body>
+    <%- include('../layout/admin-header.ejs') %> 
+    <!--Admin Page Wrapper-->
+    <div class="admin-wrapper">
+
+        <!--Left sidebar-->
+        <%- include('../layout/left-sidebar.ejs') %> 
+        <!--Left sidebar-->
+
+        <!--Admin content-->
+    <div class="admin-content">
+        <div class="button-group">
+            <a href="/addPost" class="btn btn-big">Add Post</a>
+            <a href="/managePost" class="btn btn-big">Manage Post</a>
+        </div>
+
+        <div class="content">
+
+            <h2 class="page-title">Manage Post</h2>
+
+            <table>
+                <thead>
+                    <th>SN</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th colspan="3">Action</th>
+                </thead>
+                <tbody>
+                    <% for(var i=0; i< contents.length; i++) { %>
+                    <tr>
+                        <td><%= contents[i].id %></td>
+                        <td><%= contents[i].title %></td>
+                        <td>Blogger</td>
+                        <td><form action="/editPost/<%= contents[i].id %>" method="GET">
+                            <input type="submit" value="Edit" class="btn btn-big Action"></form></td>
+                        <td><form action="/deletePost/<%= contents[i].id %>" method="POST">
+                            <input type="submit" value="Delete" class="btn btn-big Action"></form></td>
+                    </tr>
+                    <% } %>
+                </tbody>    
+            </table>
+
+        </div>
+
+    </div>
+        <!--Admin content-->
+    </div>
+</body>
+</html> 
